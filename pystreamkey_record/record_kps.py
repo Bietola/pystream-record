@@ -15,7 +15,7 @@ def print_key(pretty):
             }
 
         print(json.dumps(
-            key.__dict__ | { 'repr': repr(key) },
+            key.__dict__,
             **kwargs
         ))
 
@@ -31,7 +31,4 @@ def record_kps(pretty=False):
         time.sleep(1)
 
 def cli():
-    fire.Fire({
-        'record': record_kps,
-        'test': lambda: keyboard.press_and_release(35)
-    })
+    fire.Fire(record_kps)
