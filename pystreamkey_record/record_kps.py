@@ -30,5 +30,10 @@ def record_kps(pretty=False):
     while True:
         time.sleep(1)
 
+    keyboard.hook_key
+
 def cli():
-    fire.Fire(record_kps)
+    fire.Fire({
+        'record': record_kps,
+        'test': lambda: print(keyboard.record())
+    })
